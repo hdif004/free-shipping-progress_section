@@ -1,0 +1,45 @@
+
+.livraison-content {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.livraison-text {
+  margin: 0;
+}
+
+#prix-restant {
+  font-weight: bold;
+}
+
+
+
+progress {
+  width: 80%;
+  height: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  margin: 1rem auto;
+}
+
+
+progress::-webkit-progress-bar {
+  background-color: white;
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+  background-color: black;
+  border-radius: 5px 0 0 5px;
+}
+
+
+progress::-moz-progress-bar {
+  background-color: black;
+  border-radius: 5px;
+}
