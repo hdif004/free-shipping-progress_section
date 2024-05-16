@@ -9,7 +9,7 @@ Cette section affiche la progression de l'utilisateur vers la livraison gratuite
 
 # 2- Calculer le prix total avec Liquid :
 
-# 3- Utilisez une variable Liquid pour calculer le prix total du panier.
+- Utilisez une variable Liquid pour calculer le prix total du panier.
 - Déterminer le montant restant ou l'éligibilité :
 
 # 4-Comparez le prix total avec le seuil de livraison gratuite (par exemple, 49 €).
