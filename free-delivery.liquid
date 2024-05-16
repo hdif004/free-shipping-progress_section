@@ -1,0 +1,26 @@
+<div class="free-livraison">
+                    <div class="livraison-content">
+                      {% assign total_price_number = cart.total_price | money_without_currency | replace: ',', '.' | plus: 0 %}
+
+                      {% if total_price_number < 49 %}
+                        <svg class="livraison-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 18H1V3h13v14m0 1H9m-3 3a3 3 0 1 0 0-6a3 3 0 0 0 0 6Zm11 0a3 3 0 1 0 0-6a3 3 0 0 0 0 6ZM14 8h5l4 5v5h-3"/></svg>
+                        {% assign prix_restant = 49 | minus: total_price_number %}
+                        <p class="livraison-text">Encore <span id="prix-restant">{{ prix_restant | remove: '-' }} €</span> pour profiter de la livraison gratuite</p>
+                        <input type="hidden" id="total_price" name="total_price" value="{{ total_price_number }}">
+                      {% elsif total_price_number >= 49 %}
+                        <div style="display: flex;
+                        justify-content: center;
+                        margin: 0 auto;
+                        text-align: center;
+                        width:100%;
+                        align-items:center;">
+                        <svg style="margin-right: .8rem;" class="livraison-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 1024q-139 0-257-68.5T68.5 769T0 512t68.5-257T255 68.5T512 0t257 68.5T955.5 255t68.5 257t-68.5 257T769 955.5T512 1024zm0-896q-104 0-192.5 51.5t-140 140T128 512t51.5 192.5t140 140T512 896t192.5-51.5t140-140T896 512t-51.5-192.5t-140-140T512 128zm-2 531q-5 18-15 28q-20 20-49 16q-28 2-46-16q-10-10-14-27L272 546q-17-17-17-41t17-41t41-17t41 17l93 93l222-221q17-17 41-17t41 17t17 41t-17 41z"/></svg>
+                        <p class="livraison-text">LIVRAISON GRATUITE</p>
+                        </div>
+                        
+                      {% endif %}
+                      
+                      
+                    </div> 
+                    <progress id="progress-bar" max="49" value="{{ cart.total_price |  money_without_currency |  replace: ',','.'  }}"></progress>
+          </div>
